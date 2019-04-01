@@ -33,11 +33,44 @@
             $schema: 'https://vega.github.io/schema/vega-lite/v3.0.json',
             description: 'A simple bar chart with embedded data.',
             data: {url:'./output.json'},
-            mark: 'line',
-            encoding: {
-                x: {field: 'DATE', type: 'temporal'},
-                y: {field: 'ALTGELD', type: 'quantitative'}
-            }
+            
+            hconcat:[
+                {
+                    mark: 'line',
+                    encoding:{
+                        x:{field:'DATE', type:'temporal'},
+                        y:{field:'ALBANY PARK', type:'quantitative'}
+                    }
+                },
+                {
+                    mark: 'line',
+                    encoding:{
+                        x:{field:'DATE', type:'temporal'},
+                        y:{field:'ALTGELD', type:'quantitative'}
+                    }
+                },
+                {
+                    mark: 'line',
+                    encoding:{
+                        x:{field:'DATE', type:'temporal'},
+                        y:{field:'AUSTIN', type:'quantitative'}
+                    }
+                },
+                {
+                    mark: 'line',
+                    encoding:{
+                        x:{field:'DATE', type:'temporal'},
+                        y:{field:'AUSTIN-IRVING', type:'quantitative'}
+                    }
+                },
+                {
+                    mark: 'line',
+                    encoding:{
+                        x:{field:'DATE', type:'temporal'},
+                        y:{field:'ARCHER HEIGHTS', type:'quantitative'}
+                    }
+                },
+            ]              
         };
         vegaEmbed('#vis', yourVlSpec);
     </script>
