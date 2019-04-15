@@ -40,12 +40,49 @@
                         "feature": "Zoning"
                     }
                 },
+                "transform": [
+                    {
+                        "lookup":"properties.zoning_description",
+                        "from": {
+                            "field": ["base_tupe"],
+                            "data": {
+                                "values":[
+                                    {'Code': 'CB1', 'base_type': 'Commercial'},
+                                    {'Code': 'CB2', 'base_type': 'Commercial'},
+                                    {'Code': 'CB3', 'base_type': 'Commercial'},
+                                    {'Code': 'CG', 'base_type': 'Commercial'},
+                                    {'Code': 'CI', 'base_type': 'Commercial'},
+                                    {'Code': 'CN', 'base_type': 'Commercial'},
+                                    {'Code': 'CO', 'base_type': 'Commercial'},
+                                    {'Code': 'I1', 'base_type': 'Industrial'},
+                                    {'Code': 'I2', 'base_type': 'Industrial'},
+                                    {'Code': 'IBP', 'base_type': 'Commercial'},
+                                    {'Code': 'IOP', 'base_type': 'Commercial'},
+                                    {'Code': 'IT-MF', 'base_type': 'Residential'},
+                                    {'Code': 'IT-MX', 'base_type': 'Residential'},
+                                    {'Code': 'IT-NC', 'base_type': 'Residential'},
+                                    {'Code': 'IT-SF1', 'base_type': 'Residential'},
+                                    {'Code': 'IT-SF2', 'base_type': 'Residential'},
+                                    {'Code': 'MF1', 'base_type': 'Residential'},
+                                    {'Code': 'MF2', 'base_type': 'Residential'},
+                                    {'Code': 'MF3', 'base_type': 'Residential'},
+                                    {'Code': 'MFUniv', 'base_type': 'Residential'},
+                                    {'Code': 'MHP', 'base_type': 'Residential'},
+                                    {'Code': 'SF1', 'base_type': 'Residential'},
+                                    {'Code': 'SF2', 'base_type': 'Residential'},
+                                ] 
+                                },
+                            
+                            "key": "code"
+                        }
+                    }
+                ],
                 "mark": "geoshape",
                 "projection": {
                     "type": "albersUsa"
                 },
                 "encoding": {
-                    "color": {"field": "properties.zoning_code", "type": "nominal"}
+                    "color": {"field": "base_code", "type": "nominal"}
                 }
             };
         vegaEmbed('#vis', yourVlSpec);
