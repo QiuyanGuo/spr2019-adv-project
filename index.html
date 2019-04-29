@@ -35,6 +35,7 @@
              </section>
             
             <section>
+                <section>
                         <div id="vis"></div>
                         <script type="text/javascript">
                             var yourVlSpec1 = 
@@ -62,16 +63,48 @@
                             vegaEmbed('#vis', yourVlSpec1);
                         </script>
                 </section>
+                <section>
+                        <p>
+                            <small>Vegalite <a href="https://vega.github.io/editor/#/">Interactions</a> 
+                        </p> 
+                        <div id="vis"></div>
+                        <script type="text/javascript">
+                            var yourVlSpec2 = 
+                            {"$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+                                "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/marvel-wikia-data.csv"},
+                                
+                                "mark": "point",
+                                "height": 800,
+                                "width": 1000,
+                                "encoding": {
+                                    "color":{
+                                    "bin": {"step":10},
+                                    "field": "Year", 
+                                    "type": "nominal",
+                                    },
+                                    "x": {
+                                    "field": "HAIR", 
+                                    "type": "nominal"
+                                    },
+                                    "y": {
+                                    "field": "EYE",
+                                    "type": "nominal"
+                                    }}
+                                };
+                            vegaEmbed('#vis', yourVlSpec2);
+                        </script>
+                </section>
+            </section>
 
-                <section data-markdown
+            <section data-markdown
                 data-separator="^\n---\n"
                 data-separator-vertical="^\n----\n">
                <script type="text/template">
                  <h1>Hello There!!!!</h1>
                </script>
-               </section>
+            </section>
 
-               <section>
+            <section>
                     <p>
                         <small>Vegalite <a href="https://vega.github.io/editor/#/">Interactions</a> 
                     </p>    
