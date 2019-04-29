@@ -82,12 +82,27 @@
                                     "oneOf": ["Blue Eyes", "Amber Eyes","Gold Eyes", "Hazel Eyes", "Green Eyes", "Yellow Eyes",
                                             "Violet Eyes", "Pink Eyes", "Brown Eyes", "Grey Eyes"],
                                     "field": "EYE"
+                                },
+                                "filter": {
+                                    "selection": "SEX"
                                 }
                             }
                         ],
-            
+                        "selection": {
+                            "ALIGN": {
+                            "type": "single",
+                            "fields": ["ALIGN"],
+                            "bind": {
+                                "input": "select",
+                                "options": [
+                                "Good Characters",
+                                "Bad Characters",
+                                "Neutral Characters"
+                                ]}
+                            }},
+
                         "mark": "point",
-                        "width": 500,
+                        "width": 600,
                         "encoding": {
                             "color":{
                             "field": "EYE", 
