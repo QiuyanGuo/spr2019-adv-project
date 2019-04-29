@@ -47,8 +47,6 @@
         </section>
         <section>
                 <div id="vis"></div>
-
-                <!-- This is from the example embedded vega-lite demo -->
                 <script type="text/javascript">
                     var yourVlSpec = 
                         {"$schema": "https://vega.github.io/schema/vega-lite/v3.json",
@@ -75,6 +73,68 @@
                     vegaEmbed('#vis', yourVlSpec);
                 </script>
             
+        </section>
+        <section>
+                <div id="vis"></div>
+                <script type="text/javascript">
+                    var yourVlSpec = 
+                    {"$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+                        "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/marvel-wikia-data.csv"},
+                        "vconcat": [
+                        {"selection": {
+                            "selected_points": {
+                            "type": "interval"}
+                        },
+                            "mark": "point",
+                            "encoding": {
+                            "color":{
+                                "condition": {
+                                "selection": "selected_points", 
+                                "type": "nominal"},
+                            
+                            "field": "ID", 
+                            "type": "nominal", 
+                            "scale": {
+                                "domain": ["Secret Identity", "Public Identity", "No Dual Identity"]}
+                            },
+                        "x": {"field": "EYE",
+                              "type": "nominal"},
+                        "y": {"field": "HAIR",
+                            "type": "nominal"}
+                        }
+                    },
+                    {
+                        "mark": "bar",
+                        "transform":[
+                            {
+                            "filter": {
+                                "selection":"selected_points"
+                                }
+                            }
+                            ],
+                        "encoding": {
+                        "color":{
+                        "field": "SEX", 
+                        "type": "nominal", 
+                        "scale": {
+                            "domain": ["Male Characters", "Female Characters",          "Genderfluid Characters", "Agender Characters"]
+                        }
+                        },
+
+                        "x": {
+                            "bin": {"step":2},
+                            "field": "Year",
+                            "type": "nominal"
+                        },
+                        "y": {
+                            "field": "APPEARANCES",
+                            "type": "quantitative"
+                        }
+                        }
+                        }
+                    ]
+                    }
+
         </section>
 
       </div>
