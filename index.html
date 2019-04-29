@@ -58,27 +58,46 @@
                         <div id="vis"></div>
                         <script type="text/javascript">
                             var yourVlSpec1 = 
-                            {"$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-                                "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/marvel-wikia-data.csv"},
-                                
-                                "mark": "point",
-                                "height": 800,
-                                "width": 1000,
-                                "encoding": {
-                                    "color":{
-                                    "bin": {"step":10},
-                                    "field": "Year", 
-                                    "type": "nominal",
-                                    },
-                                    "x": {
-                                    "field": "EYE", 
-                                    "type": "nominal"
-                                    },
-                                    "y": {
-                                    "field": "HAIR",
-                                    "type": "nominal"
-                                    }}
-                                };
+                            {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/marvel-wikia-data.csv"},
+"vconcat": [
+  {  
+  "mark": "rect",
+  "encoding": {
+    "color":{
+      "field": "APPEARANCES", 
+      "type": "quantitative"
+    },
+    "x": {
+      "field": "EYE",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "HAIR",
+      "type": "nominal"
+    }
+  }
+},
+{  
+  "mark": "rect",
+  "encoding": {
+    "color":{
+      "field": "Year", 
+      "type": "quantitative"
+    },
+    "x": {
+      "field": "EYE",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "HAIR",
+      "type": "nominal"
+    }
+  }
+}
+]
+};
                             vegaEmbed('#vis', yourVlSpec1);
                         </script>
             </section>
