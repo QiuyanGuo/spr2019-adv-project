@@ -177,22 +177,16 @@
             { src: '/reveal-paperjs/paper-figures.js', async: true},
             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/math/math.min.js', async: true }
         ],
-		keyboard: {
-			67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
-			66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-			46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
-			 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
-			68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
-		},
+		
         center: false,
         transition: 'none',
         backgroundTransition: 'none'
     });
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
-{% if page.setup_script %}
+
 <script src="{{ page.setup_script }}"></script>
-{% endif %}
+
 
   </body>
 </html>
