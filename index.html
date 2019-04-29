@@ -50,82 +50,82 @@
                 <script type="text/javascript">
                     var yourVlSpec1 = 
                     {
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/marvel-wikia-data.csv"},
-  "mark": "point",
-  "transform":[
-    {
-      "filter": {
-        "selection": "ALIGN"
-      }
-    },
-    {
-      "filter": {
-        "selection": "SEX"
-      }
-    },
-    {
-      "filter": {
-        "selection": "ID"
-      }
-    }
-  ],
-  "selection": {
-    "ALIGN": {
-      "type": "single",
-      "fields": ["ALIGN"],
-      "bind": {
-        "input": "select",
-        "options": [
-          "Good Characters",
-          "Bad Characters",
-          "Neutral Characters"
-        ]
-      }
-    },
-    "SEX": {
-      "type": "single",
-      "fields": ["SEX"],
-      "bind": {
-        "input": "select",
-        "options": [
-          "Male Characters",
-          "Female Characters",
-          "Genderfluid Characters",
-          "Agender Characters"
-        ]
-      }
-    },
-    "ID": {
-      "type": "single",
-      "fields": ["ID"],
-      "bind": {
-        "input": "select",
-        "options": [
-          "Secret Identity",
-          "Public Identity",
-          "No Dual Identity"
-        ]
-      }
-    }
-  },
-  "encoding": {
-    "color":{
-      "bin": {"step":10},
-      "field": "Year", 
-      "type": "nominal"
-    },
-    "x": {
-      "field": "EYE",
-      "type": "nominal"
-    },
-    "y": {
-      "field": "HAIR",
-      "type": "nominal"
-    }
-  }
-}
-;
+                    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+                    "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/marvel-wikia-data.csv"},
+                    "mark": "point",
+                    "transform":[
+                        {
+                        "filter": {
+                            "selection": "ALIGN"
+                        }
+                        },
+                        {
+                        "filter": {
+                            "selection": "SEX"
+                        }
+                        },
+                        {
+                        "filter": {
+                            "selection": "ID"
+                        }
+                        }
+                    ],
+                    "selection": {
+                        "ALIGN": {
+                        "type": "single",
+                        "fields": ["ALIGN"],
+                        "bind": {
+                            "input": "select",
+                            "options": [
+                            "Good Characters",
+                            "Bad Characters",
+                            "Neutral Characters"
+                            ]
+                        }
+                        },
+                        "SEX": {
+                        "type": "single",
+                        "fields": ["SEX"],
+                        "bind": {
+                            "input": "select",
+                            "options": [
+                            "Male Characters",
+                            "Female Characters",
+                            "Genderfluid Characters",
+                            "Agender Characters"
+                            ]
+                        }
+                        },
+                        "ID": {
+                        "type": "single",
+                        "fields": ["ID"],
+                        "bind": {
+                            "input": "select",
+                            "options": [
+                            "Secret Identity",
+                            "Public Identity",
+                            "No Dual Identity"
+                            ]
+                        }
+                        }
+                    },
+                    "encoding": {
+                        "color":{
+                        "bin": {"step":10},
+                        "field": "Year", 
+                        "type": "nominal"
+                        },
+                        "x": {
+                        "field": "EYE",
+                        "type": "nominal"
+                        },
+                        "y": {
+                        "field": "HAIR",
+                        "type": "nominal"
+                        }
+                    }
+                    }
+                    ;
                     vegaEmbed('#vis', yourVlSpec1);
                 </script>
             
