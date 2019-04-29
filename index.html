@@ -55,7 +55,7 @@
                </script>
             </section>
 
-            
+
             <section>
                         <div id="vis"></div>
                         <script type="text/javascript">
@@ -63,7 +63,11 @@
                             {"$schema": "https://vega.github.io/schema/vega-lite/v3.json",
                                 "data": {"url": "https://raw.githubusercontent.com/QiuyanGuo/spr2019-adv-project/master/data.csv"},
                     
-                                "mark": "point",
+                                "mark": "circle",
+                                "selection": {"grid": {
+                                                "type": "interval", 
+                                                "bind": "scales"
+                                                }},
                                 "height": 600,
                                 "width": 700,
                                 "encoding": {
@@ -79,7 +83,9 @@
                                     "y": {
                                     "field": "HAIR",
                                     "type": "nominal"
-                                    }}
+                                    },
+                                    "size": {"field": "APPEARANCES", "type": "quantitative"}
+                                    }
                                 };
                             vegaEmbed('#vis', yourVlSpec1);
                         </script>
